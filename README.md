@@ -1,30 +1,30 @@
-# Instructional Design Portfolio
+# Sedat Çilingir Portfolio
 
-Instructional designer ve edtech professional profili icin hazirlanmis statik portfolio sitesi.
+Static portfolio site for Sedat Çilingir, focused on instructional design, learning technologies, e-learning content, and LMS workflows.
 
-## Icerik
+## Content
 
-- Profil ve uzmanlik alanlari
-- Secili proje/vaka calismasi alanlari
-- Tasarim sureci
-- Arac kutusu
-- Iletisim baglantilari
+- Profile and expertise areas
+- Selected project and case study sections
+- Learning design process
+- Toolset and methods
+- Contact links
 
-## Yerelde acma
+## Open Locally
 
-Bu proje statik HTML/CSS/JS kullandigi icin ek kurulum gerektirmez. `index.html` dosyasini tarayicida acabilirsiniz.
+This project uses static HTML, CSS, and JavaScript. Open `index.html` in a browser to view the site.
 
-## GitHub Pages ile yayinlama
+## Publish With GitHub Pages
 
-1. Bu klasoru GitHub'da yeni bir repository'ye push edin.
-2. Repository sayfasinda `Settings > Pages` alanina gidin.
-3. `Deploy from a branch` secenegini secin.
-4. Branch olarak `main` veya `master`, klasor olarak `/root` secin.
-5. Kaydedin ve verilen GitHub Pages linkini bekleyin.
+1. Push this folder to a GitHub repository.
+2. Open `Settings > Pages` in the repository.
+3. Choose `Deploy from a branch`.
+4. Select the `main` branch and `/root` folder.
+5. Save and wait for the GitHub Pages URL.
 
-## Duzenlenecek alanlar
+## Fields To Update
 
-- `index.html` icindeki `Ad Soyad`
-- E-posta, LinkedIn ve GitHub linkleri
-- Proje basliklari ve vaka calismasi metinleri
-- Arac listesi ve uzmanlik alanlari
+- Email address
+- LinkedIn and GitHub links
+- Project titles and case study details
+- Toolset and expertise areas
