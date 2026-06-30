@@ -108,6 +108,13 @@ img {
   text-transform: uppercase;
 }
 
+.hero-name {
+  margin: 0 0 14px;
+  color: var(--teal-dark);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 800;
+}
+
 h1,
 h2,
 h3,
