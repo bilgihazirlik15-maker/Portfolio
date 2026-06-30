@@ -397,12 +397,28 @@ h3 {
   gap: 12px;
 }
 
-.contact-links a {
+.contact-links > a,
+.email-group {
   padding: 16px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);
   font-weight: 800;
+}
+
+.email-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+  align-items: center;
+  overflow-wrap: anywhere;
+}
+
+.email-group span {
+  width: 1px;
+  align-self: stretch;
+  min-height: 18px;
+  background: rgba(255, 255, 255, 0.28);
 }
 
 .site-footer {
