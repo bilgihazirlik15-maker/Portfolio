@@ -293,15 +293,16 @@ h3 {
 
 .work-list {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
 
 .work-item {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 24px;
-  align-items: center;
-  padding: 22px;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 18px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: #fffaf6;
@@ -321,12 +322,13 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 72px;
-  height: 42px;
+  min-width: 68px;
+  height: 38px;
   color: var(--teal-dark);
   border: 1px solid var(--line);
   border-radius: 8px;
   font-weight: 800;
+  justify-self: start;
 }
 
 .work-item .case-link {
@@ -345,6 +347,7 @@ h3 {
   font-weight: 800;
   text-decoration: underline;
   text-underline-offset: 4px;
+  overflow-wrap: anywhere;
 }
 
 .tag {
@@ -556,6 +559,7 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .work-list,
   .work-item {
     grid-template-columns: 1fr;
   }
