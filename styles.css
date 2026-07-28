@@ -307,6 +307,16 @@ h3 {
   background: #fffaf6;
 }
 
+.work-item--orientation {
+  border-color: #cfe3f6;
+  background: #edf6ff;
+}
+
+.work-item--quiz {
+  border-color: #cde8d9;
+  background: #eefaf3;
+}
+
 .work-item a {
   display: inline-flex;
   align-items: center;
