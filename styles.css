@@ -299,8 +299,8 @@ h3 {
 
 .work-item {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
   align-items: start;
   padding: 18px;
   border: 1px solid var(--line);
@@ -328,7 +328,8 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 8px;
   font-weight: 800;
-  justify-self: start;
+  justify-self: end;
+  align-self: start;
 }
 
 .work-item .case-link {
@@ -343,6 +344,7 @@ h3 {
   border: 0;
   border-radius: 0;
   background: transparent;
+  justify-self: start;
   font-size: 0.95rem;
   font-weight: 800;
   text-decoration: underline;
