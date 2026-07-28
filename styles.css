@@ -303,19 +303,31 @@ h3 {
   gap: 14px;
   align-items: start;
   padding: 18px;
-  border: 1px solid var(--line);
+  border: 1px solid #d8bda4;
   border-radius: 8px;
-  background: #fffaf6;
+  background: #f2dfcc;
 }
 
 .work-item--orientation {
-  border-color: #cfe3f6;
-  background: #edf6ff;
+  border-color: #cfa989;
+  background: #ead1b8;
 }
 
 .work-item--quiz {
-  border-color: #cde8d9;
-  background: #eefaf3;
+  border-color: #dcc0a6;
+  background: #f5e5d4;
+}
+
+.work-item:nth-child(3) {
+  background: #eed8c4;
+}
+
+.work-item:nth-child(4) {
+  background: #f4e4d3;
+}
+
+.work-item:nth-child(5) {
+  background: #ead0b6;
 }
 
 .work-item a {
