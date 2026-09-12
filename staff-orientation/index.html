@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A fictionalized new staff orientation demo with the same staff structure and refreshed names and faces."
+    />
+    <title>New Staff Orientation | Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="orientation-shell">
+      <section class="context-panel" aria-label="Module overview">
+        <div class="brand-row">
+          <div class="brand-mark">PP</div>
+          <div>
+            <p class="eyebrow">New Staff Orientation</p>
+            <h1>Welcome to the Preparatory Program</h1>
+          </div>
+        </div>
+        <p class="intro-copy">
+          A self-paced orientation prototype introducing the people, routines,
+          and support systems that shape everyday work in a university
+          preparatory program.
+        </p>
+        <div class="module-card">
+          <div class="module-topline">
+            <span>Your journey</span>
+            <strong id="progressValue">8%</strong>
+          </div>
+          <div class="progress-track" aria-label="Orientation progress">
+            <span id="progressBar"></span>
+          </div>
+          <ol class="chapter-list">
+            <li class="active" data-step="welcome">
+              <span>01</span>
+              <div>
+                <strong>A warm welcome</strong>
+                <small>Meet your digital guide</small>
+              </div>
+            </li>
+            <li data-step="team">
+              <span>02</span>
+              <div>
+                <strong>Meet the team</strong>
+                <small>People and responsibilities</small>
+              </div>
+            </li>
+            <li data-step="programme">
+              <span>03</span>
+              <div>
+                <strong>Programme essentials</strong>
+                <small>Courses, routines, assessment</small>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="experience-panel" aria-label="Interactive orientation">
+        <div class="tablet">
+          <header class="tablet-top">
+            <div class="tablet-brand">
+              <span class="brand-mark small">PP</span>
+              <div>
+                <small>PREPARATORY PROGRAM</small>
+                <strong>Staff Orientation</strong>
+              </div>
+            </div>
+            <div class="guide-identity">
+              <div class="guide-avatar" aria-hidden="true">AI</div>
+              <div>
+                <strong>ORION</strong>
+                <small>Programme guide</small>
+              </div>
+            </div>
+            <button class="restart-button" type="button" id="restartButton" aria-label="Restart journey">Restart</button>
+          </header>
+
+          <div class="tablet-workspace">
+            <section class="content-area" aria-live="polite">
+              <p class="day-label">YOUR FIRST DAY</p>
+              <div class="message accent">
+                Hello. I am ORION, your digital guide for this orientation
+                experience.
+              </div>
+              <div class="message">
+                Choose a staff group or programme topic. The structure mirrors
+                the original orientation schema, with fictional Turkish names
+                and newly generated faces.
+              </div>
+              <div id="detailPanel" class="detail-panel">
+                <h2>Start with the team map</h2>
+                <p>
+                  Select a group from the menu to see responsibilities, rooms,
+                  extensions, and the people connected to that support area.
+                </p>
+              </div>
+            </section>
+
+            <aside class="action-area">
+              <div class="action-heading">
+                <small>Orientation Menu</small>
+                <strong>Choose your next step</strong>
+              </div>
+              <div class="menu-group">
+                <button type="button" data-panel="leadership">Program Leadership</button>
+                <button type="button" data-panel="coordinators">Level Coordinators</button>
+                <button type="button" data-panel="testing">Testing Members</button>
+                <button type="button" data-panel="trainers">Teacher Trainers</button>
+                <button type="button" data-panel="humanResources">Human Resources</button>
+                <button type="button" data-panel="educationalTechnologies">Educational Technologies</button>
+                <button type="button" data-panel="studentAffairs">Student Affairs Office</button>
+                <button type="button" data-panel="planning">Planning Office</button>
+                <button type="button" data-panel="levels">Levels and Courses</button>
+                <button type="button" data-panel="assessment">Assessment Essentials</button>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
