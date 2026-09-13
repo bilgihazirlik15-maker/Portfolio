@@ -96,56 +96,68 @@ const programmeData = {
 };
 
 const detailPanel = document.querySelector("#detailPanel");
+const contentArea = document.querySelector(".content-area");
 const buttons = document.querySelectorAll("[data-panel]");
 const restartButton = document.querySelector("#restartButton");
+const initialPanelMarkup = `
+  <article class="detail-panel">
+    <h2>Start with the team map</h2>
+    <p>Select a group from the menu to see responsibilities, rooms, extensions, and the people connected to that support area.</p>
+  </article>
+`;
 
 function renderProfiles(panel) {
   return `
-    <h2>${panel.title}</h2>
-    <p>${panel.copy}</p>
-    <div class="profile-grid">
-      ${panel.profiles
-        .map(
-          (profile) => `
-            <article class="profile-card">
-              <div class="face face-${profile.face}" aria-hidden="true"></div>
-              <div>
-                <strong>${profile.name}</strong>
-                <small>${profile.role}</small>
-                <span>Ext: ${profile.extension}</span>
-                <span>Room# ${profile.room}</span>
-              </div>
-            </article>
-          `,
-        )
-        .join("")}
-    </div>
+    <article class="detail-panel">
+      <h2>${panel.title}</h2>
+      <p>${panel.copy}</p>
+      <div class="profile-grid">
+        ${panel.profiles
+          .map(
+            (profile) => `
+              <article class="profile-card">
+                <div class="face face-${profile.face}" aria-hidden="true"></div>
+                <div>
+                  <strong>${profile.name}</strong>
+                  <small>${profile.role}</small>
+                  <span>Ext: ${profile.extension}</span>
+                  <span>Room# ${profile.room}</span>
+                </div>
+              </article>
+            `,
+          )
+          .join("")}
+      </div>
+    </article>
   `;
 }
 
 function renderInfo(panel) {
   return `
-    <h2>${panel.title}</h2>
-    <p>${panel.copy}</p>
-    <div class="info-list">
-      ${panel.items
-        .map(
-          ([title, copy]) => `
-            <article class="info-card">
-              <strong>${title}</strong>
-              <p>${copy}</p>
-            </article>
-          `,
-        )
-        .join("")}
-    </div>
+    <article class="detail-panel">
+      <h2>${panel.title}</h2>
+      <p>${panel.copy}</p>
+      <div class="info-list">
+        ${panel.items
+          .map(
+            ([title, copy]) => `
+              <article class="info-card">
+                <strong>${title}</strong>
+                <p>${copy}</p>
+              </article>
+            `,
+          )
+          .join("")}
+      </div>
+    </article>
   `;
 }
 
 function showPanel(key) {
   const teamPanel = teamData[key];
   const programmePanel = programmeData[key];
-  detailPanel.innerHTML = teamPanel ? renderProfiles(teamPanel) : renderInfo(programmePanel);
+  detailPanel.insertAdjacentHTML("beforeend", teamPanel ? renderProfiles(teamPanel) : renderInfo(programmePanel));
+  contentArea.scrollTo({ top: contentArea.scrollHeight, behavior: "smooth" });
   buttons.forEach((button) => button.classList.toggle("active", button.dataset.panel === key));
 }
 
@@ -154,9 +166,7 @@ buttons.forEach((button) => {
 });
 
 restartButton.addEventListener("click", () => {
-  detailPanel.innerHTML = `
-    <h2>Start with the team map</h2>
-    <p>Select a group from the menu to see responsibilities, rooms, extensions, and the people connected to that support area.</p>
-  `;
+  detailPanel.innerHTML = initialPanelMarkup;
+  contentArea.scrollTo({ top: 0, behavior: "smooth" });
   buttons.forEach((button) => button.classList.remove("active"));
 });

@@ -157,7 +157,7 @@ p {
 
 .tablet-workspace {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 340px;
+  grid-template-columns: minmax(0, 1fr) 280px;
   height: 100%;
   min-height: 0;
   overflow: hidden;
@@ -185,8 +185,7 @@ p {
   letter-spacing: 0.12em;
 }
 
-.message,
-.detail-panel {
+.message {
   max-width: 780px;
   margin: 0 0 12px;
   padding: 16px 18px;
@@ -200,8 +199,19 @@ p {
   border-left: 4px solid var(--brand-soft);
 }
 
-.detail-panel {
+.detail-stack {
+  display: grid;
+  gap: 14px;
+  max-width: 780px;
   margin-top: 18px;
+}
+
+.detail-panel {
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(123, 61, 52, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 10px 26px rgba(65, 39, 31, 0.08);
 }
 
 .detail-panel h2 {
@@ -316,8 +326,8 @@ p {
 
 .action-area {
   min-height: 0;
-  padding: 22px;
-  overflow: auto;
+  padding: 16px;
+  overflow: hidden;
   color: #fffaf6;
   background:
     radial-gradient(circle at 100% 0, rgba(74, 105, 140, 0.18), transparent 38%),
@@ -326,9 +336,9 @@ p {
 
 .action-heading {
   display: grid;
-  gap: 6px;
-  padding-bottom: 16px;
-  margin-bottom: 16px;
+  gap: 4px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
   border-bottom: 1px solid rgba(194, 218, 232, 0.18);
 }
 
@@ -341,18 +351,18 @@ p {
 }
 
 .action-heading strong {
-  font-size: 1.35rem;
+  font-size: 1.08rem;
   line-height: 1.15;
 }
 
 .menu-group {
   display: grid;
-  gap: 8px;
+  gap: 6px;
 }
 
 .menu-group button {
-  min-height: 42px;
-  padding: 8px 12px;
+  min-height: 36px;
+  padding: 7px 10px;
   color: #39231c;
   text-align: left;
   cursor: pointer;
@@ -385,7 +395,7 @@ p {
   }
 
   .action-area {
-    max-height: 280px;
+    max-height: none;
   }
 }
 
