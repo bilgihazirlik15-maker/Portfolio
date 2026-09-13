@@ -10,7 +10,7 @@ const teamData = {
     title: "Level Coordinators",
     copy: "Meet the level coordinators who support planning, materials, assessment, and day-to-day questions.",
     profiles: [
-      { name: "Deniz Arslan", role: "Level 1 Coordinator", extension: "6166", room: "B511", face: 2 },
+      { name: "Barış Arslan", role: "Level 1 Coordinator", extension: "6166", room: "B511", face: 2 },
       { name: "Selin Korkmaz", role: "Level 2 Coordinator", extension: "6436", room: "B511", face: 3 },
       { name: "Murat Özkan", role: "Level 3 Coordinator", extension: "6638", room: "B511", face: 4 },
       { name: "Ece Yalçın", role: "Level 4 Coordinator", extension: "6176", room: "B511", face: 5 },
@@ -32,9 +32,9 @@ const teamData = {
     title: "Teacher Trainers",
     copy: "Meet the trainers who support professional development, classroom practice, and reflective teaching.",
     profiles: [
-      { name: "Nil Taşçı", role: "Teacher Trainer", extension: "6258", room: "B407", face: 12 },
-      { name: "Bora Yiğit", role: "Teacher Trainer", extension: "6416", room: "B407", face: 13 },
-      { name: "Melis Büyükkaya", role: "Teacher Trainer", extension: "6416", room: "B407", face: 14 },
+      { name: "Nihat Taşçı", role: "Teacher Trainer", extension: "6258", room: "B407", face: 12 },
+      { name: "Büşra Yiğit", role: "Teacher Trainer", extension: "6416", room: "B407", face: 13 },
+      { name: "Eren Büyükkaya", role: "Teacher Trainer", extension: "6416", room: "B407", face: 14 },
       { name: "Ayşe Apaydın", role: "Teacher Trainer", extension: "6416", room: "B407", face: 15 },
     ],
   },
@@ -42,21 +42,21 @@ const teamData = {
     title: "Human Resources",
     copy: "This space explains who can help with employment documents, institutional procedures, benefits, and personnel questions.",
     profiles: [
-      { name: "Buket Kurtoğlu", role: "Human Resources", extension: "6325", room: "B603", face: 16 },
+      { name: "Mert Kurtoğlu", role: "Human Resources", extension: "6325", room: "B603", face: 16 },
     ],
   },
   educationalTechnologies: {
     title: "Educational Technologies",
     copy: "Meet the team that supports digital learning platforms, classroom technologies, online tools, and technical guidance.",
     profiles: [
-      { name: "Tolga Çetin", role: "Learning Technologies", extension: "6167", room: "B603", face: 17 },
+      { name: "Elif Çetin", role: "Learning Technologies", extension: "6167", room: "B603", face: 17 },
     ],
   },
   studentAffairs: {
     title: "Student Affairs Office",
     copy: "This section introduces the office that supports student records, attendance processes, communication, and student-facing procedures.",
     profiles: [
-      { name: "Burcu Kaya", role: "Student Affairs Office", extension: "6867", room: "BZ-09", face: 18 },
+      { name: "Burak Kaya", role: "Student Affairs Office", extension: "6867", room: "BZ-09", face: 18 },
       { name: "Mihriban Güneş", role: "Student Affairs Office", extension: "6261", room: "BZ-09", face: 19 },
     ],
   },
@@ -64,7 +64,7 @@ const teamData = {
     title: "Planning Office",
     copy: "Here, new instructors learn who coordinates timetables, classroom assignments, teaching schedules, and operational planning.",
     profiles: [
-      { name: "Sevda Alkan", role: "Planning Office", extension: "6296", room: "B514", face: 20 },
+      { name: "Serdar Alkan", role: "Planning Office", extension: "6296", room: "B514", face: 20 },
       { name: "Ayşen Sezer", role: "Planning Office", extension: "6123", room: "B514", face: 21 },
     ],
   },
@@ -96,19 +96,8 @@ const programmeData = {
 };
 
 const detailPanel = document.querySelector("#detailPanel");
-const progressBar = document.querySelector("#progressBar");
-const progressValue = document.querySelector("#progressValue");
 const buttons = document.querySelectorAll("[data-panel]");
 const restartButton = document.querySelector("#restartButton");
-const chapters = document.querySelectorAll(".chapter-list li");
-
-function setProgress(value, activeStep) {
-  progressBar.style.width = `${value}%`;
-  progressValue.textContent = `${value}%`;
-  chapters.forEach((chapter) => {
-    chapter.classList.toggle("active", chapter.dataset.step === activeStep);
-  });
-}
 
 function renderProfiles(panel) {
   return `
@@ -157,7 +146,6 @@ function showPanel(key) {
   const teamPanel = teamData[key];
   const programmePanel = programmeData[key];
   detailPanel.innerHTML = teamPanel ? renderProfiles(teamPanel) : renderInfo(programmePanel);
-  setProgress(teamPanel ? 62 : 82, teamPanel ? "team" : "programme");
   buttons.forEach((button) => button.classList.toggle("active", button.dataset.panel === key));
 }
 
@@ -171,5 +159,4 @@ restartButton.addEventListener("click", () => {
     <p>Select a group from the menu to see responsibilities, rooms, extensions, and the people connected to that support area.</p>
   `;
   buttons.forEach((button) => button.classList.remove("active"));
-  setProgress(8, "welcome");
 });
