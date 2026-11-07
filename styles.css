@@ -55,22 +55,22 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-weight: 800;
+  white-space: nowrap;
+  color: #79533f;
+  font: 600 26px/1.15 "Segoe UI Variable", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  letter-spacing: -0.6px;
 }
 
-.brand-mark {
-  display: grid;
-  width: 40px;
-  height: 40px;
-  place-items: center;
-  color: var(--white);
-  background: var(--teal-dark);
-  border-radius: 8px;
-  font-size: 0.9rem;
+.brand img {
+  display: block;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  object-fit: contain;
 }
 
 .brand-text {
-  letter-spacing: 0;
+  letter-spacing: inherit;
 }
 
 .nav-links {
@@ -535,6 +535,17 @@ h3 {
 }
 
 @media (max-width: 720px) {
+  .brand {
+    gap: 8px;
+    font-size: 21px;
+  }
+
+  .brand img {
+    width: 24px;
+    height: 24px;
+    flex-basis: 24px;
+  }
+
   .site-header {
     position: static;
     align-items: flex-start;
